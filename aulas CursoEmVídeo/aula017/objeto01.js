@@ -6,4 +6,3 @@ let amigo = {nome: `jose`,
     }}
     let num = 8
 console.log (`${amigo.nome} pesa ${amigo.peso}`)
-console.log (num **= 2)

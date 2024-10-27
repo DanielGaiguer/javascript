@@ -4,7 +4,7 @@ let res = document.querySelector ("#ires");
 let peso = Number(txtpeso.value);
 let alt = Number(txtaltura.value);
 function calcular(){
-    res.innerHTML += (txtpeso)
+    res.innerHTML += 'txtpeso'
     res.innerHTML += peso
     res.innerHTML += alt
     peso = Number(txtpeso.value)

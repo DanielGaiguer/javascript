@@ -1,12 +1,10 @@
-let txtpeso = document.querySelector("#ipeso")
-let txtaltura = document.querySelector ("#ialtura")
-let res = document.querySelector ("#ires")
-let peso = 0
-let alt = 0
-peso = Number(txtpeso.value)
-alt = Number(txtaltura.value)
+let txtpeso = document.querySelector("#ipeso");
+let txtaltura = document.querySelector ("#ialtura");
+let res = document.querySelector ("#ires");
+let peso = Number(txtpeso.value);
+let alt = Number(txtaltura.value);
 function calcular(){
-    res.innerHTML += txtpeso
+    res.innerHTML += (txtpeso)
     res.innerHTML += peso
     res.innerHTML += alt
     peso = Number(txtpeso.value)

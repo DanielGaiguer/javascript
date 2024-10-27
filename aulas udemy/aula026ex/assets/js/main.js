@@ -1,11 +1,16 @@
 let txtpeso = document.querySelector("#ipeso")
 let txtaltura = document.querySelector ("#ialtura")
 let res = document.querySelector ("#ires")
-let peso = Number(txtpeso.value)
-let alt = Number(txtaltura.value)
-
+let peso = 0
+let alt = 0
+peso = Number(txtpeso.value)
+alt = Number(txtaltura.value)
 function calcular(){
-    
+    res.innerHTML += txtpeso
+    res.innerHTML += peso
+    res.innerHTML += alt
+    peso = Number(txtpeso.value)
+    res.innerHTML += peso 
     if ((eNumero(peso, alt)) && (ePeso()) ){
         let IMC = peso / alt**2 
     }else{
@@ -13,12 +18,10 @@ function calcular(){
     }
 }
 
-function eNumero(p, a){
-    if(p === 0 || a === 0 ){
+function eNumero(peso, alt){
+    if(peso === 0 || alt === 0 ){
         res.innerHTML = "Dados Invalidos!"
-        res.innerHTML += peso
-        res.innerHTML += alt
-        res.innerHTML += Number(txtpeso.value)
+        
         return false 
     }else {
         return true 
@@ -36,4 +39,8 @@ function ePeso(){
 
 function setResultado(msg){
     res.innerHTML += msg
+}
+
+function num(v){
+    
 }

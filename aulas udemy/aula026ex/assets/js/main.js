@@ -1,44 +1,43 @@
-let txtpeso = document.querySelector("#ipeso");
-let txtaltura = document.querySelector ("#ialtura");
-let res = document.querySelector ("#ires");
-let peso = Number(txtpeso.value);
-let alt = Number(txtaltura.value);
-function calcular(){
-    res.innerHTML += 'txtpeso'
-    res.innerHTML += peso
-    res.innerHTML += alt
-    peso = Number(txtpeso.value)
-    res.innerHTML += peso 
-    if ((eNumero(peso, alt)) && (ePeso()) ){
-        let IMC = peso / alt**2 
-    }else{
-        
+let form = document.querySelector("#form")
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault()
+    const inputPeso = e.target.querySelector('input#peso') 
+    const inputAltura = e.target.querySelector('input#altura')
+    const peso = Number(inputPeso.value)
+    const altura = Number(inputAltura.value)
+
+    if (!peso && !altura){
+        setResultado('Peso e Altura Inválidos!', false)
+        return
     }
-}
-
-function eNumero(peso, alt){
-    if(peso === 0 || alt === 0 ){
-        res.innerHTML = "Dados Invalidos!"
-        
-        return false 
-    }else {
-        return true 
+    if (!peso) {
+        setResultado('Peso Invalido!', false)
+        return 
     }
-}
-
-function ePeso(){ 
-    if (peso.slice(-3) === '.' && peso.length <= 6 ){
-        return true 
-    }else{
-        res.innerHTML = "Teste"
-        return false 
+    if (!altura){
+        setResultado('Altura Invalida!', false)
+        return
     }
-}
-
-function setResultado(msg){
-    res.innerHTML += msg
-}
-
-function num(v){
     
+    const imc = getImc(peso, altura)
+    console.log (imc)
+} )
+
+function criaP(){
+    let p = document.createElement('p')
+    return p 
+}
+
+function setResultado(msg, isValid){
+    let resultado = document.querySelector("#resultado")
+    resultado.innerHTML = ''
+    const p = criaP()
+    p.innerHTML = msg
+    resultado.appendChild(p)
+}
+
+function getImc(peso, altura){
+    let imc = peso / altura **2
+    return imc.toFixed(2)
 }

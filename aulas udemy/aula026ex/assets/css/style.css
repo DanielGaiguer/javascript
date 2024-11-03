@@ -44,7 +44,7 @@ form input:focus {
   outline: 1px solid var(--primary-color);
 }
 
-form button {
+input#button {
   border: none;
   background: var(--primary-color);
   color: #fff;
@@ -58,16 +58,11 @@ form button {
 form button:hover {
   background: var(--primary-color-darker);
 }
-
-#esquerdo{
-  text-align: left;
-  width: 200px;
-  display: block;
+.paragrafo-resultado, .bad {
+  background: rgb(96, 243, 96);
+  padding: 10px 20px ;
 }
 
-#direito{
-  text-align: right;
-  width: 100px ;
-  display: block;
-
+.bad{
+  background: rgb(255, 150, 150);
 }

@@ -41,7 +41,7 @@ ValidaCpf.prototype.isSequencia = function(){
     return sequencia === this.cpfLimpo
 }
 
-
+ 
 const cpf = new ValidaCpf(`705.484.450-52`)
 //console.log(cpf.valida())
 

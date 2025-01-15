@@ -26,20 +26,21 @@ body {
   border-radius: 10px;
 }
 
-form input{
+input{
   height: 20px;
   width: 20px;
 
 }
 
-.caracteres{
+.qtd{
   width: 50px;
 }
-form input:focus {
+
+input:focus {
   outline: 1px solid var(--primary-color);
 }
 
-form button {
+button {
   border: none;
   background: var(--primary-color);
   color: #fff;
@@ -50,6 +51,17 @@ form button {
   margin-top: 30px;
 }
 
-form button:hover {
+button:hover {
   background: var(--primary-color-darker);
+}
+
+.senha-gerada{
+  text-align: center;
+  font-size: 2em;
+  color: var(--primary-color);
+  margin: 15px;
+}
+
+label{
+  font-size: 1.1em;
 }

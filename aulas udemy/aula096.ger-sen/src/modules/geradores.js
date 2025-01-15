@@ -15,11 +15,11 @@ export default function geraSenha(qtd, maisculas, minusculas, numeros, simbolos)
         numeros && senhaArray.push(geraNumero())
         simbolos && senhaArray.push(geraSimbolo())
     }
-    
+    senhaArray.sort(() => 0.5 - Math.random());
     return String(senhaArray.join(``).slice(0, qtd))
 }
 
-geraSenha(10, true, true, true, true)
+
 
 
 

@@ -16,7 +16,7 @@ const flash = require('connect-flash')
 
 const routes = require('./routes')
 const path = require('path')
-const meuMiddleware = require(`./src/middlewares/middleware`)
+const {middlewareGlobal} = require(`./src/middlewares/middleware`)
 //const { default: mongoose } = require('mongoose')
 
 app.use(express.urlencoded({extended: true}))
@@ -40,7 +40,7 @@ app.set('views', path.resolve(__dirname, `src`, 'views'))
 app.set('view engine', 'ejs')
 
 //Nossos proprios middlewares
-app.use(meuMiddleware)
+app.use(middlewareGlobal)
 app.use(routes)
 
 app.on('pronto', () => {

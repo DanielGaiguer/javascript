@@ -1,18 +1,9 @@
-/*
-const HomeModel = require('../models/HomeModel')
-
-HomeModel.create({ //find() para pesquisar 
-    titulo: `Um titulo de testes`,
-    descricao: `Uma descricao de testes`
-})
-    
- .then(dados => console.log(dados))
- .catch(e => console.log(e))
-*/
-
 exports.paginaIncial = (req, res ) => {
-    res.render('index')
-
+    res.render('index', {
+        titulo: `Este sera um titulo da pagina`,
+        numeros: [1,2,3,4,5,6,7,8,9]
+    })
+    return
 }
 
 exports.trataPost = (req, res ) => {

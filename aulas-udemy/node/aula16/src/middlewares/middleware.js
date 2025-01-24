@@ -1,6 +1,8 @@
-module.exports = (req, res, next) => {
-    console.log(`passei no middleware global.`)
-    console.log(`vi que voce postou ${req.body.cliente}`)
-    req.body.cliente += ` doido`
+exports.middlewareGlobal = (req, res, next) => {
+    res.locals.umaVariavelLocal = `Este  valor e uma variavel local`
+    next()
+}
+
+exports.outroMiddleware =(req, res, next) => {
     next()
 }

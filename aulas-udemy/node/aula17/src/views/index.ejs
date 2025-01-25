@@ -4,24 +4,18 @@
 
   <section class="container">
     <h1>
-
       <% if(typeof titulo !== 'undefined')  { %>
         <%= titulo %>
       <% } else { %>
         O titulo nao foi enviado
       <% } %>
     </h1>
-    <h2>
-
-      <% numeros.forEach(num => { %>
-        <%= num %> <br>
-      <% })%>
-
-    </h2>
     <form action="/" method="post">
+      <input type="hidden" name="_csrf" value="<%= csrfToken>">
       <label for="">Cliente</label>
       <input type="text" name="cliente">
       <button>Submit</button>
+
     </form>
   </section>
 

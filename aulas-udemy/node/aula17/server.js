@@ -2,12 +2,14 @@ require('dotenv').config()
 
 const express = require('express')
 const app = express()
+
 const mongoose = require('mongoose')
 mongoose.connect(process.env.CONNECTIONSTRING)
  .then(() => {
     console.log(`conectei a base de dados`)
     app.emit('pronto')
  }).catch(e => console.log(e))
+
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
 const flash = require('connect-flash')

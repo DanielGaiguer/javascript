@@ -16,7 +16,7 @@ exports.register = async (req, res) => {
             req.session.save(() => res.redirect('/contato/index'))
             return 
         }
-        req.flash('sucess', 'Contato registrado com sucesso')
+        req.flash('success', 'Contato registrado com sucesso')
         req.session.save(() => res.redirect(`/contato/index/${contato.contato._id}`))
         return
     }catch(e) {
@@ -28,7 +28,7 @@ exports.register = async (req, res) => {
 exports.editIndex = async function(req, res) {
     if(!req.params.id) return res.render('404')
     
-    const contato = await Contato.buscaPorId(req.params.id )
+    const contato = await Contato.buscaPorId(req.params.id)
     if (!contato) return res.render('404')
 
     res.render('contato', {contato})
@@ -36,18 +36,19 @@ exports.editIndex = async function(req, res) {
 
 exports.edit = async function(req, res) {
     try{
+       
         if(!req.params.id) return res.render('404')
             const contato = new Contato(req.body)
             await contato.edit(req.params.id)
         
             if (contato.errors.length > 0 ){
                 req.flash('errors', contato.errors)
-                req.session.save(() => res.redirect('/contato/index'))
+                req.session.save(() => res.redirect(`/contato/index/${req.params.id}`))
                 return 
             }
         
-            req.flash('sucess', 'Contato editado com sucesso')
-            req.session.save(() => res.redirect(`/contato/index/${contato.contato._id}`))
+            req.flash('success', 'Contato editado com sucesso')
+            req.session.save(() => res.redirect(`/contato/index/${req.params.id}`))
             return
     }catch(e) {
         console.log(e)

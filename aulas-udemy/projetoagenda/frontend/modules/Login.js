@@ -10,7 +10,7 @@ export default class Login {
     events() {
         if (!this.form) return
         this.form.addEventListener('submit', e => {
-            e.preventDefault()
+            e.preventDefault(e)
             alert(`form nao enviado`)
         })
     }

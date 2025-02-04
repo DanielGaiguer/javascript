@@ -41,7 +41,7 @@ export default class Contato {
             }
         }
 
-        if (!emailInput.value && !teleInput){
+        if (!emailInput.value && !teleInput.value){
             this.message(`Pelo menos um contato precisa ser adicionado: E-mail ou Telefone.`)
             error = true
         }

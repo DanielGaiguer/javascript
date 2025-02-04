@@ -11,7 +11,7 @@
         <p class="text-center lead">Crie ou edite seu contato abaixo</p> 
 
           <%- include('includes/messages')%>
-          <div class="res text-center"></div>
+          <div class="res"></div>
 
           <% if(contato._id) { %>
           <form action="/contato/edit/<%= contato._id %> " method="POST">

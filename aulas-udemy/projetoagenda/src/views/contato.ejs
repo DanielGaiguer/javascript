@@ -11,11 +11,12 @@
         <p class="text-center lead">Crie ou edite seu contato abaixo</p> 
 
           <%- include('includes/messages')%>
+          <div class="res text-center"></div>
 
           <% if(contato._id) { %>
           <form action="/contato/edit/<%= contato._id %> " method="POST">
           <% } else {%>
-            <form action="/contato/register" method="POST">
+            <form class="form-contato" action="/contato/register" method="POST">
           <% } %>
           
             <input type="hidden" name="_csrf" value=<%= csrfToken %>>

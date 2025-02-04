@@ -3,6 +3,7 @@ import validator from 'validator'
 export default class Login {
     constructor(formClass){
         this.form = document.querySelector(formClass)
+        this.res = document.querySelector(`.res`)
     }
 
     init(){ 
@@ -13,6 +14,7 @@ export default class Login {
         if (!this.form) return
         this.form.addEventListener('submit', e => {
             e.preventDefault()
+           
             this.validate(e)
         })
     }
@@ -24,16 +26,22 @@ export default class Login {
         let error = false
 
         if (!validator.isEmail(emailInput.value)) {
-            alert('Email invalido') 
-            error = true
-        }    
-            
-        
+            error = true  
+            this.message('Email Inválido.') 
+        }
         if (passwordInput.value.length < 3 || passwordInput.value.length > 50 ) {
-            alert('Senha precisa ter entre 3 e 50 caracteres') 
             error = true
+            this.message('Senha Inválida.')
         }    
         
         if (!error) el.submit()
+    }
+
+    message(msg) {
+        const newP = document.createElement("p")
+        newP.innerHTML = msg
+        this.res.classList.add(`alert`)
+        this.res.classList.add(`alert-danger`)
+        this.res.appendChild(newP)
     }
 }
